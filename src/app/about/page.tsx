@@ -75,42 +75,60 @@ export default function About() {
 					</div>
 				</div>
 				<Divider />
-				<div className={"text-title text-xl m-3"}>简介</div>
-				<div className={"md-typeset ml-2 text-sm mr-2"}>
+				<div className={"text-title text-xl m-4"}>简介</div>
+				<div className={"md-typeset text-sm mx-4"}>
 					<ul>
-						<li>目前就读于湖南大学城乡规划专业。</li>
-						<li>已经退役的OI选手，现役的ACM选手。</li>
+						<li>目前就读于湖南大学计算机科学与技术（拔尖实验班）。</li>
 						<li>业余的全栈开发者。</li>
+						<li>已经退役的OI选手，现役的摆烂型ACM选手。</li>
+						<li>技术栈</li>
 						<ul className={"ml-6"}>
-							<li>前端：Vue（略懂），React（正在学）/ Next.js</li>
-							<li>后端：Java / SpringBoot，Python，Rust（正在学）</li>
+							<li>React / Next.js / TypeScript</li>
+							<li>Rust / C,C++ / Python</li>
 						</ul>
 						<li>业余的搞机爱好者。</li>
+						<li>对算法，操作系统感兴趣。</li>
 					</ul>
 				</div>
 				<Divider />
-				<div className={"text-title text-xl m-3"}>奖项</div>
-				<div className={"md-typeset ml-2 text-sm"}>
+				<div className={"text-title text-xl m-4"}>奖项</div>
+				<div className={"md-typeset mx-4 text-sm"}>
 					<ul>
 						<li>
-							<WorkspacePremiumOutlinedIcon color={"success"} />
-							<span className={"ml-2"}>CCF CSP 430分（2024-12）</span>
+							<WorkspacePremiumOutlinedIcon color={"warning"} />
+							<span className={"ml-2"}>
+								ICPC 国际大学生程序设计竞赛 全国邀请赛（南昌）铜牌（2025-5）
+							</span>
 						</li>
 						<li>
 							<WorkspacePremiumOutlinedIcon color={"success"} />
-							<span className={"ml-2"}>NOIP 2023 一等奖（2023-11）</span>
+							<span className={"ml-2"}>
+								CCF 第 36 次专业级软件能力认证（CSP）430分（2024-12）
+							</span>
 						</li>
 						<li>
 							<WorkspacePremiumOutlinedIcon color={"success"} />
-							<span className={"ml-2"}>CSP 2023 一等奖（2023-10）</span>
+							<span className={"ml-2"}>
+								2023 年全国青少年信息学奥林匹克联赛（NOIP）一等奖（2023-11）
+							</span>
+						</li>
+						<li>
+							<WorkspacePremiumOutlinedIcon color={"success"} />
+							<span className={"ml-2"}>
+								2023 年 CSP 非专业级软件能力认证（提高组）一等奖（2023-10）
+							</span>
 						</li>
 						<li>
 							<WorkspacePremiumOutlinedIcon color={"warning"} />
-							<span className={"ml-2"}>NOI春季测试 二等奖（2023-3）</span>
+							<span className={"ml-2"}>
+								2023 年 NOI 春季测试 二等奖（2023-3）
+							</span>
 						</li>
 						<li>
 							<WorkspacePremiumOutlinedIcon color={"warning"} />
-							<span className={"ml-2"}>CSP 2022 二等奖（2022-10）</span>
+							<span className={"ml-2"}>
+								2022 年 CSP 非专业级软件能力认证（提高组）二等奖（2022-10）
+							</span>
 						</li>
 					</ul>
 				</div>
