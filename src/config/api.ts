@@ -1,6 +1,6 @@
 import "server-only";
-import { GlobalRef } from "@/app/config/global";
-import { readFile } from "@/app/config/data";
+import { GlobalRef } from "@/config/global";
+import { readFile } from "@/config/data";
 import Path from "path";
 
 export interface IConfig {

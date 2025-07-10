@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { AboutNavigator, useNavigatorStore } from "@/app/config/navigator";
+import React from "react";
+import { useEffect } from "react";
+import { AboutNavigator, useNavigatorStore } from "@/config/navigator";
 import { Divider, Paper, SvgIcon, Tooltip } from "@mui/material";
 import LazyLoad from "react-lazyload";
-import NormalContainter from "@/app/components/NormalContainter";
-import { Avatar } from "@/app/config";
+import NormalContainter from "@/components/NormalContainter";
+import { Avatar } from "@/config";
 import IconButton from "@mui/material/IconButton";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import "@/app/config/markdown.css";

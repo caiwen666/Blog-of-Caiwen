@@ -1,15 +1,16 @@
 import React from "react";
-import NormalContainer from "@/app/components/NormalContainter";
-import RecommendList from "@/app/components/RecommendList";
+import NormalContainer from "@/components/NormalContainter";
+import RecommendList from "@/components/RecommendList";
 import Client from "@/app/client";
-import HomeWaterfallList from "@/app/components/HomeWaterfallList";
-import getDataInstance, { getArticle } from "@/app/config/data";
-import { Article } from "@/app/config/entity";
+import HomeWaterfallList from "@/components/HomeWaterfallList";
+import getDataInstance, { getArticle } from "@/config/data";
+import { Article } from "@/config/entity";
+import { SiteDescription, SiteName } from "@/config";
 
 export const revalidate = 0;
 export const metadata = {
-	title: "首页 - Caiwen的博客",
-	description: "Caiwen的博客，一个技术博客。",
+	title: SiteName,
+	description: SiteDescription,
 };
 
 export default function Home() {

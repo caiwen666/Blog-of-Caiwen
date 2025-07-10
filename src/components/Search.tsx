@@ -1,6 +1,7 @@
 "use client";
 
-import React, { ChangeEvent, useRef, useState } from "react";
+import React from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import {
 	Breadcrumbs,
 	ButtonBase,
@@ -18,8 +19,8 @@ import {
 import IconButton from "@mui/material/IconButton";
 import { CloseIcon } from "next/dist/client/components/react-dev-overlay/internal/icons/CloseIcon";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import { SearchDTO, SearchResponse } from "@/app/config/entity";
-import SearchHighlight from "@/app/components/SearchHighlight";
+import { SearchDTO, SearchResponse } from "@/config/entity";
+import SearchHighlight from "@/components/SearchHighlight";
 
 const DEBOUNCE_TIME = 1000;
 const ITEMS_LIMIT = 10;

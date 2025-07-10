@@ -1,13 +1,13 @@
 "use client";
 
 import { Alert, Chip, CircularProgress, Tooltip } from "@mui/material";
-import NormalArticalItem from "@/app/components/NormalArticalItem";
+import NormalArticalItem from "@/components/NormalArticalItem";
 import IconButton from "@mui/material/IconButton";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import React, { useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import classNames from "classnames";
-import { ArticleDTO } from "@/app/config/entity";
+import { ArticleDTO } from "@/config/entity";
 
 const ARTICLE_PER_PAGE = 6;
 

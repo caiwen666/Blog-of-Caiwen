@@ -1,15 +1,16 @@
 import "server-only";
 import {
+	Article,
 	ArticleList,
 	ArticleMap,
 	Category,
 	Recommend,
-} from "@/app/config/entity";
+} from "@/config/entity";
 import Path from "path";
 import Fs from "fs";
 import dayjs from "dayjs";
-import { GlobalRef } from "@/app/config/global";
-import { getConfigInstance } from "@/app/config/api";
+import { GlobalRef } from "@/config/global";
+import { getConfigInstance } from "@/config/api";
 import { MeiliSearch } from "meilisearch";
 
 export interface IData {
@@ -72,7 +73,7 @@ export default function getDataInstance(forceLoad = false) {
 	}
 }
 
-export function getArticle(id: string) {
+export function getArticle(id: string): Article | null {
 	const instance = getDataInstance();
 	if (instance.index[id] === undefined) {
 		return null;

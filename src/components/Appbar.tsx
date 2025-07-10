@@ -9,9 +9,9 @@ import Navigator, {
 	useNavigatorStore,
 	NavigatorItem,
 	LoadingNavigator,
-} from "@/app/config/navigator";
+} from "@/config/navigator";
 import IconButton from "@mui/material/IconButton";
-import Search from "@/app/components/Search";
+import Search from "@/components/Search";
 import "client-only";
 
 export default function Appbar({ onDrawerOpen }: { onDrawerOpen: () => void }) {

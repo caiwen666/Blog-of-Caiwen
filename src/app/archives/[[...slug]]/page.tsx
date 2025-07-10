@@ -1,5 +1,5 @@
 import React from "react";
-import NormalContainter from "@/app/components/NormalContainter";
+import NormalContainter from "@/components/NormalContainter";
 import {
 	Breadcrumbs,
 	ButtonBase,
@@ -11,14 +11,15 @@ import {
 } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import IconButton from "@mui/material/IconButton";
-import { Category } from "@/app/config/entity";
-import getDataInstance, { getArticle } from "@/app/config/data";
+import { Category } from "@/config/entity";
+import getDataInstance, { getArticle } from "@/config/data";
 import { notFound } from "next/navigation";
 import FolderOpenOutlinedIcon from "@mui/icons-material/FolderOpenOutlined";
 import dayjs from "dayjs";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import Client from "@/app/archives/[[...slug]]/client";
 import classNames from "classnames";
+import { SiteName } from "@/config";
 
 export interface CategoryItem {
 	name: string;
@@ -28,7 +29,7 @@ export interface CategoryItem {
 
 export const revalidate = 0;
 export const metadata = {
-	title: "归档 - Caiwen的博客",
+	title: "归档 - " + SiteName,
 };
 
 export default async function Archives({

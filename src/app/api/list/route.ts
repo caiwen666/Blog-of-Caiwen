@@ -1,6 +1,6 @@
-import getDataInstance, { getArticle } from "@/app/config/data";
-import { ArticleDTO } from "@/app/config/entity";
-import { omitFields } from "@/app/utils";
+import getDataInstance, { getArticle } from "@/config/data";
+import { ArticleDTO } from "@/config/entity";
+import { omitFields } from "@/utils";
 import { NextRequest } from "next/server";
 
 export const revalidate = 0;

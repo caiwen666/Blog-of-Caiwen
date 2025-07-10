@@ -5,14 +5,15 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import "./global.css";
-import "./katex.min.css";
+import "@/global.css";
+import "@/katex.min.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import Appbar from "@/app/components/Appbar";
-import theme from "@/app/config/theme";
+import Appbar from "@/components/Appbar";
+import theme from "@/config/theme";
 import { ThemeProvider } from "@mui/material/styles";
-import NormalContainter from "@/app/components/NormalContainter";
-import SideDrawer from "@/app/components/SideDrawer";
+import NormalContainter from "@/components/NormalContainter";
+import SideDrawer from "@/components/SideDrawer";
+import { GongAnBeian, ICPBeian, SiteName } from "@/config";
 
 export default function RootLayout({
 	children,
@@ -41,7 +42,7 @@ export default function RootLayout({
 							<NormalContainter className={"p-6 sm:flex"}>
 								<div>
 									<div className={"text-head font-bold text-4xl"}>
-										Caiwen的博客
+										{SiteName}
 									</div>
 									<div className={"text-sm opacity-40 mt-3"}>
 										Powered by Next.js
@@ -57,7 +58,7 @@ export default function RootLayout({
 										target="_blank"
 										className="opacity-60 hover:opacity-40 transition-opacity ml-auto"
 									>
-										冀ICP备2024080902号-1
+										{ICPBeian}
 									</a>
 									<a
 										href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=13090202000724"
@@ -66,9 +67,7 @@ export default function RootLayout({
 										className="flex items-center opacity-60 hover:opacity-40 transition-opacity"
 									>
 										<img src="/img/beian.png" className={"opacity-100"} />
-										<div className={"flex-none"}>
-											冀公网安备13090202000724号
-										</div>
+										<div className={"flex-none"}>{GongAnBeian}</div>
 									</a>
 								</div>
 							</NormalContainter>

@@ -1,5 +1,5 @@
-import getDataInstance from "@/app/config/data";
-import { getConfigInstance } from "@/app/config/api";
+import getDataInstance from "@/config/data";
+import { getConfigInstance } from "@/config/api";
 import { NextRequest } from "next/server";
 
 export function GET(req: NextRequest | Request) {

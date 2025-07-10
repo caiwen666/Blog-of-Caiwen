@@ -1,28 +1,18 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { HomeNavigator, useNavigatorStore } from "@/app/config/navigator";
+import { HomeNavigator, useNavigatorStore } from "@/config/navigator";
 import { Paper } from "@mui/material";
 import LazyLoad from "react-lazyload";
 import LocalLibraryOutlinedIcon from "@mui/icons-material/LocalLibraryOutlined";
 import { TagCloud } from "react-tagcloud";
+import { Author, IndexTags, Introduction, SiteName } from "@/config";
 
 export default function Client() {
 	const setNavigator = useNavigatorStore((state) => state.setNow);
 	useEffect(() => {
 		setNavigator(HomeNavigator);
 	}, []);
-	const tagCloud = [
-		{ value: "算法", count: 38 },
-		{ value: "刷机", count: 30 },
-		{ value: "C++", count: 28 },
-		{ value: "Java", count: 25 },
-		{ value: "Rust", count: 33 },
-		{ value: "Python", count: 18 },
-		{ value: "Go", count: 20 },
-		{ value: "OS", count: 25 },
-		{ value: "游记", count: 20 },
-	];
 	return (
 		<div className={"flex mt-28 flex-wrap"}>
 			<Paper
@@ -56,8 +46,8 @@ export default function Client() {
 					</LazyLoad>
 				</Paper>
 				<div className={"absolute z-20 bottom-6 text-white text-xl left-24"}>
-					<div className={"ml-3 mb-3"}>Caiwen</div>
-					<div className={"ml-3 text-xs"}>一只蒟蒻，爱好编程和算法</div>
+					<div className={"ml-3 mb-3"}>{Author}</div>
+					<div className={"ml-3 text-xs"}>{Introduction}</div>
 				</div>
 			</Paper>
 			<Paper
@@ -71,7 +61,7 @@ export default function Client() {
 						<div className={"flex justify-center"}>
 							<LocalLibraryOutlinedIcon className={"text-6xl"} />
 						</div>
-						<div className={"text-2xl text-center"}>Caiwen 的博客</div>
+						<div className={"text-2xl text-center"}>{SiteName}</div>
 					</div>
 					<TagCloud
 						className={"text-center mx-12"}
@@ -81,7 +71,7 @@ export default function Client() {
 						}}
 						minSize={15}
 						maxSize={25}
-						tags={tagCloud}
+						tags={IndexTags}
 					/>
 				</div>
 			</Paper>

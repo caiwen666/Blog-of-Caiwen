@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import type { Article } from "@/app/config/entity";
+import type { Article } from "@/config/entity";
 import {
 	Alert,
 	Breadcrumbs,
@@ -15,13 +15,13 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import dayjs from "dayjs";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
 import LazyLoad from "react-lazyload";
-import { Author, Avatar, Introduction } from "@/app/config";
-import RecommendList from "@/app/components/RecommendList";
+import { Author, Avatar, Introduction } from "@/config";
+import RecommendList from "@/components/RecommendList";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
-import "@/app/config/markdown.css";
-import { ArchiverNavigator, useNavigatorStore } from "@/app/config/navigator";
-import generateTOC, { useTocStore } from "@/app/utils/toc";
+import "@/config/markdown.css";
+import { ArchiverNavigator, useNavigatorStore } from "@/config/navigator";
+import generateTOC, { useTocStore } from "@/utils/toc";
 import classNames from "classnames";
 import "highlight.js/styles/github.css";
 
@@ -215,7 +215,7 @@ export default function Article({
 								<UpdateOutlinedIcon fontSize={"small"} />
 								<div className={"text-sm ml-1"}>
 									最后更新于：
-									{dayjs(data.updateTime).format("YYYY-MM-DD HH:mm:ss")}
+									{dayjs(data.updateTime).format("YYYY-MM-DD HH:mm")}
 								</div>
 							</div>
 							<Divider />
@@ -268,7 +268,7 @@ export default function Article({
 				</div>
 				<div
 					className={
-						"sticky top-20 ml-auto overflow-y-auto flex-none w-44 context-bar hidden sm:block"
+						"sticky top-20 ml-auto overflow-y-auto flex-none w-48 context-bar hidden sm:block"
 					}
 				>
 					<div className={"flex text-low"}>

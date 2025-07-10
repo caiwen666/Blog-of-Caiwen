@@ -1,5 +1,5 @@
-import { getSearchClient } from "@/app/config/data";
-import { SearchDTO, SearchResponse } from "@/app/config/entity";
+import { getSearchClient } from "@/config/data";
+import { SearchDTO, SearchResponse } from "@/config/entity";
 import { NextRequest } from "next/server";
 
 export const revalidate = 0;

@@ -2,7 +2,7 @@ import MarkdownIt from "markdown-it";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import { Token } from "markdown-it/lib/token";
-import { getSrcPath } from "@/app/utils/index";
+import { getSrcPath } from "@/utils/index";
 
 export default function MarkdownItImageEnhance(md: MarkdownIt) {
 	const regex = /^\{[^}]*\}/;

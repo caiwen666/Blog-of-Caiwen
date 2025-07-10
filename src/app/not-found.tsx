@@ -1,11 +1,11 @@
-import NormalContainter from "@/app/components/NormalContainter";
-import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
-
 import React from "react";
+import NormalContainter from "@/components/NormalContainter";
+import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 import { Metadata } from "next";
+import { SiteName } from "@/config";
 
 export const metadata: Metadata = {
-	title: "页面不存在 - Caiwen的博客",
+	title: "页面不存在 - " + SiteName,
 };
 
 export default function NotFound() {

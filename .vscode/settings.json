@@ -1,0 +1,32 @@
+{
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "never",
+		"source.removeUnusedImports": "explicit"
+	},
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "never",
+			"source.removeUnusedImports": "explicit"
+		},
+		"editor.tabSize": 2
+	},
+	"[typescriptreact]": {
+		"editor.tabSize": 2,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "never",
+			"source.removeUnusedImports": "never"
+		}
+	},
+	"[javascript]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "never",
+			"source.removeUnusedImports": "explicit"
+		},
+		"editor.tabSize": 2
+	}
+}

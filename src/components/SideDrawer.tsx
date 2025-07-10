@@ -15,11 +15,11 @@ import LazyLoad from "react-lazyload";
 import Navigator, {
 	NavigatorItem,
 	useNavigatorStore,
-} from "@/app/config/navigator";
+} from "@/config/navigator";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import IconButton from "@mui/material/IconButton";
 import classNames from "classnames";
-import { useTocStore } from "@/app/utils/toc";
+import { useTocStore } from "@/utils/toc";
 import { CSSTransition } from "react-transition-group";
 
 export default function SideDrawer({

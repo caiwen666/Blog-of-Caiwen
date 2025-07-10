@@ -5,17 +5,17 @@ import { Link, Paper } from "@mui/material";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import IconButton from "@mui/material/IconButton";
 import classNames from "classnames";
-import "@/app/config/markdown.css";
+import "@/config/markdown.css";
 import MarkdownItFootnote from "markdown-it-footnote";
 import MarkdownItContainer from "markdown-it-container";
-import MarkdownItImageEnhance from "@/app/utils/MarkdownItImageEnhance";
+import MarkdownItImageEnhance from "@/utils/MarkdownItImageEnhance";
 import MarkdownItAnchor from "markdown-it-anchor";
 import MarkdownItKatex from "@vscode/markdown-it-katex";
 import hljs from "highlight.js";
 import "highlight.js/styles/github.css";
 import slugify from "@sindresorhus/slugify";
 import pinyin from "pinyin";
-import generateTOC, { TOCItem } from "@/app/utils/toc";
+import generateTOC, { TOCItem } from "@/utils/toc";
 
 const DEBOUNCE_TIME = 100;
 

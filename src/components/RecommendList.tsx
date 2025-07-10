@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import SmallArticleItem from "@/app/components/SmallArticleItem";
+import SmallArticleItem from "@/components/SmallArticleItem";
 import { Paper } from "@mui/material";
 import classNames from "classnames";
-import { Article } from "@/app/config/entity";
+import { Article } from "@/config/entity";
 
 export default function RecommendList({
 	data,

@@ -1,10 +1,11 @@
 import React from "react";
-import getDataInstance, { getArticle, readFile } from "@/app/config/data";
+import getDataInstance, { getArticle, readFile } from "@/config/data";
 import Path from "path";
 import { notFound } from "next/navigation";
 import Article from "@/app/post/[slug]/article";
-import { ArticleList } from "@/app/config/entity";
+import { ArticleList } from "@/config/entity";
 import { Metadata } from "next";
+import { SiteName } from "@/config";
 
 export const revalidate = 0;
 
@@ -20,7 +21,7 @@ export async function generateMetadata({
 	}
 	const article = getArticle(id)!;
 	return {
-		title: article.title + " - Caiwen的博客",
+		title: article.title + " - " + SiteName,
 		description: article.summary,
 		keywords: article.key,
 	};
