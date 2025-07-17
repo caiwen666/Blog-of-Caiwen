@@ -44,7 +44,6 @@ export const parseArticle = async (
 	const keys = [
 		"id",
 		"createTime",
-		"summary",
 		"key",
 		"tags",
 		"background",

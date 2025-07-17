@@ -15,6 +15,7 @@ import {
 	readFileSync,
 	writeFileWithDirsSync,
 } from "./utils.js";
+import { generateSummary } from "./ai.js";
 
 const MAX_RECOMMEND = 10; //最大推荐数量
 
@@ -162,6 +163,9 @@ async function buildTree(
 			if (meta.id === undefined) {
 				console.error("Error: id is required in meta");
 				process.exit(-1);
+			}
+			if (meta.summary === undefined) {
+				meta.summary = await generateSummary(content);
 			}
 			if (
 				meta.status !== undefined &&
