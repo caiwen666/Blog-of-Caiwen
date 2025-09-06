@@ -1,0 +1,74 @@
+name: Build and Deploy
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  Build-NodeJS:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run lint
+        run: yarn lint
+      - name: Build project
+        run: yarn build
+      - name: Prepare artifacts
+        run: |
+          mkdir -p deploy
+          cp -r public deploy/
+          cp -r .next/standalone/{*,.*} deploy/
+          cp -r .next/static/ deploy/.next/static/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deploy-artifacts
+          path: deploy/
+  Build-Docker:
+    needs: Build-NodeJS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: deploy-artifacts
+          path: deploy/
+      - name: Login to Gtihub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: deploy
+          push: true
+          file: deploy/Dockerfile
+          tags: |
+            ghcr.io/caiwen666/blog:${{ github.ref }}
+            ghcr.io/caiwen666/blog:latest
+  Deploy:
+    needs: Build-Docker
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - name: Setup SSH
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: unnecessary
+      - name: Deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          cd ${{ secrets.DEPLOY_DIR }}
+          docker-compose down
+          docker-compose pull
+          docker-compose up -d
+          EOF
