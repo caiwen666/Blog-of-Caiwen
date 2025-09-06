@@ -14,7 +14,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import NormalContainter from "@/components/NormalContainter";
 import SideDrawer from "@/components/SideDrawer";
 import { GongAnBeian, ICPBeian, SiteName } from "@/config";
-import Image from "next/image";
 
 export default function RootLayout({
 	children,
@@ -67,7 +66,7 @@ export default function RootLayout({
 										target="_blank"
 										className="flex items-center opacity-60 hover:opacity-40 transition-opacity"
 									>
-										<Image
+										<img
 											src="/img/beian.png"
 											className={"opacity-100"}
 											alt="公安备案"

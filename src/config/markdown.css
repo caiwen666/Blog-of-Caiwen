@@ -71,7 +71,7 @@
 	-webkit-print-color-adjust: exact;
 	color-adjust: exact;
 	font-size: 1rem;
-	line-height: 1.6;
+	line-height: 1.75;
 	min-width: 0;
 }
 
@@ -453,6 +453,16 @@
 
 .md-typeset img[align]:only-child {
 	margin-top: 0;
+}
+
+.md-typeset .img-box {
+	display: block;
+	margin: 1.5em auto;
+	max-width: 100%;
+	text-align: center;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 }
 
 .md-typeset .img-box .img-title {

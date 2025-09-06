@@ -21,7 +21,6 @@ import IconButton from "@mui/material/IconButton";
 import classNames from "classnames";
 import { useTocStore } from "@/utils/toc";
 import { CSSTransition } from "react-transition-group";
-import Image from "next/image";
 import { Author } from "@/config";
 
 export default function SideDrawer({
@@ -93,7 +92,7 @@ export default function SideDrawer({
 									}
 								>
 									<LazyLoad>
-										<Image
+										<img
 											src="/img/avatar.webp"
 											className={"object-cover animate-fadeIn w-full h-full"}
 											alt={Author}

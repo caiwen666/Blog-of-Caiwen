@@ -7,6 +7,7 @@ export default function Client() {
 	const setNavigator = useNavigatorStore((state) => state.setNow);
 	useEffect(() => {
 		setNavigator(ArchiverNavigator);
-	}, [setNavigator]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	return <div></div>;
 }

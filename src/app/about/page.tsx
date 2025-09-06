@@ -10,13 +10,13 @@ import { Author, Avatar, IntroductionInAbout } from "@/config";
 import IconButton from "@mui/material/IconButton";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import "@/config/markdown.css";
-import Image from "next/image";
 
 export default function About() {
 	const setNavigator = useNavigatorStore((state) => state.setNow);
 	useEffect(() => {
 		setNavigator(AboutNavigator);
-	}, [setNavigator]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	return (
 		<NormalContainter className={"py-16"}>
 			<Paper className={"overflow-hidden"}>
@@ -28,7 +28,7 @@ export default function About() {
 						}
 					>
 						<LazyLoad>
-							<Image
+							<img
 								src={Avatar}
 								alt={Author}
 								className={"object-cover animate-fadeIn w-full h-full"}

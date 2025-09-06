@@ -14,8 +14,7 @@ const compat = new FlatCompat({
 	baseDirectory: __dirname,
 });
 
-/** @type {import("eslint").Linter.Config[]} */
-export default [
+const CONFIG = [
 	...compat.extends("next/core-web-vitals", "next/typescript"),
 	{
 		ignores: [
@@ -25,6 +24,7 @@ export default [
 			"build/**",
 			"next-env.d.ts",
 		],
+		rules: { "@next/next/no-img-element": "off" },
 	},
 	{ files: ["./src/**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
 	{ languageOptions: { globals: globals.browser } },
@@ -33,3 +33,4 @@ export default [
 	pluginReact.configs.flat.recommended,
 	eslintConfigPrettier,
 ];
+export default CONFIG;

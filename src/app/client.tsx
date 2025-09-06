@@ -7,13 +7,13 @@ import LazyLoad from "react-lazyload";
 import LocalLibraryOutlinedIcon from "@mui/icons-material/LocalLibraryOutlined";
 import { TagCloud } from "react-tagcloud";
 import { Author, IndexTags, Introduction, SiteName } from "@/config";
-import Image from "next/image";
 
 export default function Client() {
 	const setNavigator = useNavigatorStore((state) => state.setNow);
 	useEffect(() => {
 		setNavigator(HomeNavigator);
-	}, [setNavigator]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	return (
 		<div className={"flex mt-28 flex-wrap"}>
 			<Paper
@@ -40,7 +40,7 @@ export default function Client() {
 					}
 				>
 					<LazyLoad>
-						<Image
+						<img
 							src="/img/avatar.webp"
 							alt={Author}
 							className={"object-cover animate-fadeIn w-full h-full"}

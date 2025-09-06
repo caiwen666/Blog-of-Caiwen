@@ -33,7 +33,7 @@ export default function Appbar({ onDrawerOpen }: { onDrawerOpen: () => void }) {
 		};
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
-	});
+	}, []);
 	const [showSearch, setShowSearch] = useState(false);
 	return (
 		<>

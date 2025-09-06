@@ -124,7 +124,8 @@ export default function Article({
 				tocObserver.disconnect();
 			}
 		};
-	}, [data.title, setNavigator, setTitle, tocStore]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	interface Path {
 		name: string;
@@ -141,7 +142,7 @@ export default function Article({
 		<>
 			<div className={"flex relative pt-4 px-2 sm:px-4"}>
 				<div className={"flex-1 sm:px-8 min-w-0"}>
-					<div className={"ml-auto mr-auto article"}>
+					<div className={"ml-auto mr-auto article max-w-3xl"}>
 						<Breadcrumbs>
 							{path.map((item) => {
 								return (
