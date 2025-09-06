@@ -287,7 +287,7 @@
     "@eslint/core" "^0.15.2"
     levn "^0.4.1"
 
-"@fontsource/roboto@latest":
+"@fontsource/roboto@^5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-5.2.6.tgz#93a2a5ef98cc79880355de0aac71def215b873e7"
   integrity sha512-hzarG7yAhMoP418smNgfY4fO7UmuUEm5JUtbxCoCcFHT0hOJB+d/qAEyoNjz7YkPU5OjM2LM8rJnW8hfm0JLaA==
