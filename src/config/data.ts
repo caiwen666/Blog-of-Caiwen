@@ -32,7 +32,7 @@ export function getSearchClient(): MeiliSearch {
 	const globalValue = new GlobalRef<MeiliSearch>("blog_search");
 	if (globalValue.value) return globalValue.value;
 	const client = new MeiliSearch({
-		host: "http://localhost:7700",
+		host: "http://meilisearch:7700",
 		apiKey: config.meilisearch_token,
 	});
 	globalValue.value = client;
