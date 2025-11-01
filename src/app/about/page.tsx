@@ -1,15 +1,26 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { AboutNavigator, useNavigatorStore } from "@/config/navigator";
-import { Divider, Paper, SvgIcon, Tooltip } from "@mui/material";
+import {
+	ButtonBase,
+	Collapse,
+	Divider,
+	Paper,
+	SvgIcon,
+	Tooltip,
+} from "@mui/material";
 import LazyLoad from "react-lazyload";
 import NormalContainter from "@/components/NormalContainter";
-import { Author, Avatar, IntroductionInAbout } from "@/config";
+import { Author, Avatar, Introduction } from "@/config";
 import IconButton from "@mui/material/IconButton";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import "@/config/markdown.css";
+import CodeIcon from "@mui/icons-material/Code";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 export default function About() {
 	const setNavigator = useNavigatorStore((state) => state.setNow);
@@ -17,9 +28,52 @@ export default function About() {
 		setNavigator(AboutNavigator);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+	const [awardExpand, setAwardExpand] = useState(false);
 	return (
 		<NormalContainter className={"py-16"}>
-			<Paper className={"overflow-hidden"}>
+			<div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+				<Paper className="overflow-hidden">
+					<ButtonBase
+						component="a"
+						className="w-full h-full block p-2 px-3"
+						href="https://github.com/caiwen666/Blog-of-Caiwen"
+					>
+						<div className="flex items-center">
+							<CodeIcon className="ml-1 mr-4 text-3xl" />
+							<div>
+								<div className="flex-1 text-title text-lg">
+									博客项目
+									<ArrowForwardIcon className="text-sm ml-1" />
+								</div>
+								<div className="text-xs flex-grow">
+									本博客的全部源代码已经开源在 GitHub 上。
+								</div>
+							</div>
+						</div>
+					</ButtonBase>
+				</Paper>
+				<Paper className="overflow-hidden">
+					<ButtonBase
+						component="a"
+						className="w-full h-full block p-2 px-3"
+						href="https://github.com/caiwen666/blog-posts"
+					>
+						<div className="flex items-center">
+							<DriveFileRenameOutlineIcon className="ml-1 mr-4 text-3xl" />
+							<div>
+								<div className="flex-1 text-title text-lg">
+									文章
+									<ArrowForwardIcon className="text-sm ml-1" />
+								</div>
+								<div className="text-xs flex-grow">
+									全部文章的源代码已经开源在 GitHub 上。
+								</div>
+							</div>
+						</div>
+					</ButtonBase>
+				</Paper>
+			</div>
+			<Paper className={"overflow-hidden mt-2"}>
 				<div className={"flex h-56 items-center"}>
 					<Paper
 						elevation={0}
@@ -37,9 +91,7 @@ export default function About() {
 					</Paper>
 					<div className={"ml-4 mr-auto"}>
 						<div className={"text-3xl text-title"}>{Author}</div>
-						<div className={"text-sm text-head opacity-60"}>
-							{IntroductionInAbout}
-						</div>
+						<div className={"text-sm text-head opacity-60"}>{Introduction}</div>
 						<Tooltip title={"QQ：3102733279"}>
 							<IconButton>
 								<SvgIcon>
@@ -81,60 +133,95 @@ export default function About() {
 				<div className={"text-title text-xl m-4"}>简介</div>
 				<div className={"md-typeset text-sm mx-4"}>
 					<ul>
-						<li>目前就读于湖南大学计算机科学与技术（拔尖实验班）。</li>
-						<li>业余的全栈开发者。</li>
+						<li>全栈开发者。</li>
 						<li>已经退役的OI选手，现役的摆烂型ACM选手。</li>
-						<li>技术栈</li>
-						<ul className={"ml-6"}>
-							<li>React / Next.js / TypeScript</li>
-							<li>Rust / C,C++ / Python</li>
-						</ul>
-						<li>业余的搞机爱好者。</li>
-						<li>对算法，操作系统感兴趣。</li>
+						<li>对计算机体系架构、操作系统、编译器等底层原理感兴趣。</li>
+						<li>技术栈：Rust / C,C++ / TypeScript</li>
 					</ul>
 				</div>
 				<Divider />
-				<div className={"text-title text-xl m-4"}>奖项</div>
+				<div className={"text-title text-xl m-4"}>经历</div>
 				<div className={"md-typeset mx-4 text-sm"}>
 					<ul>
+						<li>2024.9 - ???：就读于湖南大学计算机科学与技术拔尖班。</li>
 						<li>
-							<WorkspacePremiumOutlinedIcon color={"warning"} />
-							<span className={"ml-2"}>
-								ICPC 国际大学生程序设计竞赛 全国邀请赛（南昌）铜牌（2025-5）
-							</span>
-						</li>
-						<li>
-							<WorkspacePremiumOutlinedIcon color={"success"} />
-							<span className={"ml-2"}>
-								CCF 第 36 次专业级软件能力认证（CSP）430分（2024-12）
-							</span>
-						</li>
-						<li>
-							<WorkspacePremiumOutlinedIcon color={"success"} />
-							<span className={"ml-2"}>
-								2023 年全国青少年信息学奥林匹克联赛（NOIP）一等奖（2023-11）
-							</span>
-						</li>
-						<li>
-							<WorkspacePremiumOutlinedIcon color={"success"} />
-							<span className={"ml-2"}>
-								2023 年 CSP 非专业级软件能力认证（提高组）一等奖（2023-10）
-							</span>
-						</li>
-						<li>
-							<WorkspacePremiumOutlinedIcon color={"warning"} />
-							<span className={"ml-2"}>
-								2023 年 NOI 春季测试 二等奖（2023-3）
-							</span>
-						</li>
-						<li>
-							<WorkspacePremiumOutlinedIcon color={"warning"} />
-							<span className={"ml-2"}>
-								2022 年 CSP 非专业级软件能力认证（提高组）二等奖（2022-10）
-							</span>
+							2025.9 -
+							???：湖南大学易千网络工作室技术部负责人，主要进行湖南大学微生活小程序的维护和开发。
 						</li>
 					</ul>
 				</div>
+				<Divider />
+				<ButtonBase
+					onClick={() => setAwardExpand(!awardExpand)}
+					component="div"
+					className="w-full block h-full p-4"
+				>
+					<div className={"text-title text-xl flex"}>
+						<div>奖项</div>
+						<div className="ml-auto">
+							{awardExpand ? <ExpandLess /> : <ExpandMore />}
+						</div>
+					</div>
+				</ButtonBase>
+				<Collapse
+					in={awardExpand}
+					timeout="auto"
+					unmountOnExit
+					className="pb-4"
+				>
+					<div className={"md-typeset mx-4 text-sm"}>
+						<ul>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"warning"} />
+								<span className={"ml-2"}>
+									CCF 大学生计算机系统与程序设计竞赛（CCSP）铜牌（2025-10）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"warning"} />
+								<span className={"ml-2"}>
+									ICPC 国际大学生程序设计竞赛 亚洲区域赛（西安）铜牌（2025-10）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"warning"} />
+								<span className={"ml-2"}>
+									ICPC 国际大学生程序设计竞赛 全国邀请赛（南昌）铜牌（2025-5）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"success"} />
+								<span className={"ml-2"}>
+									CCF 第 36 次专业级软件能力认证（CSP）430分（2024-12）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"success"} />
+								<span className={"ml-2"}>
+									2023 年全国青少年信息学奥林匹克联赛（NOIP）一等奖（2023-11）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"success"} />
+								<span className={"ml-2"}>
+									2023 年 CSP 非专业级软件能力认证（提高组）一等奖（2023-10）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"warning"} />
+								<span className={"ml-2"}>
+									2023 年 NOI 春季测试 二等奖（2023-3）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"warning"} />
+								<span className={"ml-2"}>
+									2022 年 CSP 非专业级软件能力认证（提高组）二等奖（2022-10）
+								</span>
+							</li>
+						</ul>
+					</div>
+				</Collapse>
 			</Paper>
 		</NormalContainter>
 	);

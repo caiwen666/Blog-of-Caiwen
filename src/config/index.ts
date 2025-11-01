@@ -1,6 +1,5 @@
 export const Author = "Caiwen";
 export const Introduction = "一只蒟蒻，爱好编程和算法";
-export const IntroductionInAbout = "全栈开发者 / 学生 / ACMer";
 export const Avatar = "/img/avatar.webp";
 export const Background = "/img/th.jpg";
 export const SiteName = "Caiwen的博客";
@@ -12,10 +11,10 @@ export const IndexTags = [
 	{ value: "算法", count: 38 },
 	{ value: "刷机", count: 30 },
 	{ value: "C++", count: 28 },
-	{ value: "Java", count: 25 },
+	{ value: "AI", count: 25 },
 	{ value: "Rust", count: 33 },
-	{ value: "Python", count: 18 },
-	{ value: "Go", count: 20 },
+	{ value: "编译", count: 18 },
+	{ value: "CS", count: 20 },
 	{ value: "OS", count: 25 },
 	{ value: "游记", count: 20 },
 ];
