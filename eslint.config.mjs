@@ -1,36 +1,21 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import eslintConfigPrettier from "eslint-config-prettier";
-import { FlatCompat } from "@eslint/eslintrc";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-	baseDirectory: __dirname,
-});
-
-const CONFIG = [
-	...compat.extends("next/core-web-vitals", "next/typescript"),
+const eslintConfig = defineConfig([
+	...nextVitals,
+	...nextTs,
+	// Override default ignores of eslint-config-next.
+	globalIgnores([
+		// Default ignores of eslint-config-next:
+		".next/**",
+		"out/**",
+		"build/**",
+		"next-env.d.ts",
+	]),
 	{
-		ignores: [
-			"node_modules/**",
-			".next/**",
-			"out/**",
-			"build/**",
-			"next-env.d.ts",
-		],
 		rules: { "@next/next/no-img-element": "off" },
 	},
-	{ files: ["./src/**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-	{ languageOptions: { globals: globals.browser } },
-	pluginJs.configs.recommended,
-	...tseslint.configs.recommended,
-	pluginReact.configs.flat.recommended,
-	eslintConfigPrettier,
-];
-export default CONFIG;
+]);
+
+export default eslintConfig;
