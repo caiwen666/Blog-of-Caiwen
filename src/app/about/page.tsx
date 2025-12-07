@@ -174,6 +174,12 @@ export default function About() {
 							<li>
 								<WorkspacePremiumOutlinedIcon color={"warning"} />
 								<span className={"ml-2"}>
+									CCPC 中国大学生程序设计竞赛（郑州）铜牌（2025-11）
+								</span>
+							</li>
+							<li>
+								<WorkspacePremiumOutlinedIcon color={"warning"} />
+								<span className={"ml-2"}>
 									CCF 大学生计算机系统与程序设计竞赛（CCSP）铜牌（2025-10）
 								</span>
 							</li>
